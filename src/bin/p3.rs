@@ -1,5 +1,13 @@
 // Topic: implementing SinglyLinkedList in RUST
 
+// Definitions
+
+// Rc = To enable multiple ownership, Rust has a type called Rc<T> . Its name is an abbreviation for reference counting,
+// which keeps track of the number of references to a value to know whether or not a value is still in use.
+
+// RefCell = RefCell<T> is mainly used in the single-threaded scenario and will give an error if we use in a multithreaded case.
+// RefCell<T> checks the mutable borrows at the runtime. Therefore, we can say that we can mutate the value even when the RefCell<T> value is immutable.
+
 use std::cell::RefCell;
 use std::rc::Rc;
 
