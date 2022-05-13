@@ -20,22 +20,21 @@ struct Node {
 }
 
 impl Node {
-    // A nice and short way of creating a new node
     fn new(value: String) -> Rc<RefCell<Node>> {
         Rc::new(RefCell::new(Node { value, next: None }))
     }
 }
 
 #[derive(Debug, Clone)]
-struct TransactionLog {
+struct LinkedList {
     head: SingleLink,
     tail: SingleLink,
     pub length: u64,
 }
 
-impl TransactionLog {
-    pub fn new_empty() -> TransactionLog {
-        TransactionLog {
+impl LinkedList {
+    pub fn new_empty() -> LinkedList {
+        LinkedList {
             head: None,
             tail: None,
             length: 0,
@@ -70,7 +69,7 @@ impl TransactionLog {
 }
 
 fn main() {
-    let mut item = TransactionLog::new_empty();
+    let mut item = LinkedList::new_empty();
     item.append("1".to_string());
     item.append("2".to_string());
     println!("{:?}", item);
